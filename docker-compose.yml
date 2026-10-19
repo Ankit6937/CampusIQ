@@ -1,0 +1,17 @@
+# Local MongoDB for CampusIQ:  docker compose up -d
+services:
+  mongo:
+    image: mongo:7
+    container_name: campusiq-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - campusiq-mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  campusiq-mongo-data:

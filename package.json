@@ -1,0 +1,15 @@
+{
+  "name": "campusiq",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CampusIQ - Intelligent Student & Placement Analytics System (CSE494)",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "seed": "npm run seed --prefix backend",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run dev --prefix frontend",
+    "ml:train": "python ml/train.py",
+    "ml:serve": "uvicorn predict:app --app-dir ml --port 8000",
+    "test": "npm test --prefix backend"
+  }
+}

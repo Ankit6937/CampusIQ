@@ -1,0 +1,27 @@
+{
+  "name": "campusiq-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed/seed.js",
+    "test": "node --test tests/*.test.js",
+    "test:nodb": "node --test tests/api.validation.test.js tests/seed.test.js tests/ml.test.js tests/ai.test.js",
+    "export-dataset": "node seed/exportDataset.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.0.0",
+    "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
